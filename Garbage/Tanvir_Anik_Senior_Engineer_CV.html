@@ -1,0 +1,916 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Md. Tanvir Hasan Anik — Senior Software Engineer specializing in Cloud Infrastructure, Full-Stack Development, and Production Systems at Scale.">
+  <title>Tanvir Hasan Anik — Senior Software Engineer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;450;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,700;0,800;1,700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --ink: #0f1419;
+      --body: #374151;
+      --muted: #6b7280;
+      --light: #9ca3af;
+      --accent: #2563eb;
+      --accent-deep: #1d4ed8;
+      --accent-glow: #dbeafe;
+      --accent-subtle: #eff6ff;
+      --warm: #f59e0b;
+      --paper: #ffffff;
+      --line: #e5e7eb;
+      --line-light: #f3f4f6;
+      --dark: #111827;
+      --dark-mid: #1f2937;
+      --hero-gradient: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f172a 100%);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: #d1d5db;
+      color: var(--body);
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      font-size: 12px;
+      line-height: 1.5;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    a { color: inherit; text-decoration: none; transition: all .2s ease; }
+    a:hover { color: var(--accent); }
+
+    /* ═══════════════════════════════════════════
+       TOOLBAR
+    ═══════════════════════════════════════════ */
+    .toolbar {
+      max-width: 794px;
+      margin: 28px auto 16px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 8px;
+    }
+    .toolbar-left {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 12px;
+      color: var(--muted);
+      font-weight: 500;
+    }
+    .toolbar-dot {
+      width: 6px; height: 6px;
+      background: var(--accent);
+      border-radius: 50%;
+    }
+    .toolbar button {
+      border: 0;
+      background: var(--dark);
+      color: white;
+      padding: 11px 24px;
+      border-radius: 8px;
+      font: 600 11.5px/1 'Inter', sans-serif;
+      cursor: pointer;
+      letter-spacing: .5px;
+      text-transform: uppercase;
+      transition: all .2s;
+    }
+    .toolbar button:hover { background: var(--accent); transform: translateY(-1px); box-shadow: 0 4px 12px rgba(37,99,235,.3); }
+
+    /* ═══════════════════════════════════════════
+       PAGE SHELL
+    ═══════════════════════════════════════════ */
+    .page {
+      width: 794px;
+      min-height: 1122px;
+      margin: 0 auto 28px;
+      background: var(--paper);
+      box-shadow: 0 20px 60px rgba(0,0,0,.12), 0 1px 3px rgba(0,0,0,.06);
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* ═══════════════════════════════════════════
+       PAGE 1 — HERO HEADER
+    ═══════════════════════════════════════════ */
+    .hero {
+      background: var(--hero-gradient);
+      color: white;
+      padding: 42px 48px 36px;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::after {
+      content: '';
+      position: absolute;
+      top: -80px; right: -80px;
+      width: 280px; height: 280px;
+      background: radial-gradient(circle, rgba(37,99,235,.12) 0%, transparent 70%);
+      border-radius: 50%;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--accent) 0%, var(--warm) 50%, var(--accent) 100%);
+    }
+
+    .hero-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 16px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 9.5px;
+      font-weight: 600;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: var(--accent);
+      background: rgba(37,99,235,.15);
+      padding: 5px 12px;
+      border-radius: 4px;
+      border: 1px solid rgba(37,99,235,.25);
+    }
+
+    .hero-contact {
+      text-align: right;
+      font-size: 11px;
+      line-height: 1.7;
+      color: rgba(255,255,255,.7);
+    }
+    .hero-contact a { color: rgba(255,255,255,.7); }
+    .hero-contact a:hover { color: var(--accent); }
+    .hero-contact .primary-link {
+      color: var(--accent);
+      font-weight: 700;
+      font-size: 11.5px;
+      letter-spacing: .2px;
+    }
+
+    .hero-name {
+      position: relative;
+      z-index: 1;
+    }
+    .hero-name h1 {
+      font-family: 'Inter', sans-serif;
+      font-size: 52px;
+      font-weight: 900;
+      line-height: .95;
+      letter-spacing: -3px;
+      margin: 0;
+      color: #ffffff;
+    }
+    .hero-name .first-line {
+      font-size: 14px;
+      font-weight: 500;
+      letter-spacing: 6px;
+      text-transform: uppercase;
+      color: rgba(255,255,255,.45);
+      display: block;
+      margin-bottom: 6px;
+    }
+
+    .hero-role {
+      margin-top: 12px;
+      font-size: 15.5px;
+      font-weight: 500;
+      color: rgba(255,255,255,.85);
+      letter-spacing: -.1px;
+      position: relative;
+      z-index: 1;
+    }
+    .hero-role .sep { color: rgba(255,255,255,.25); margin: 0 6px; }
+
+    .hero-stats {
+      display: flex;
+      gap: 1px;
+      margin-top: 22px;
+      position: relative;
+      z-index: 1;
+    }
+    .hero-stat {
+      background: rgba(255,255,255,.06);
+      padding: 12px 18px;
+      flex: 1;
+      border-radius: 0;
+    }
+    .hero-stat:first-child { border-radius: 6px 0 0 6px; }
+    .hero-stat:last-child { border-radius: 0 6px 6px 0; }
+    .hero-stat strong {
+      display: block;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--accent);
+      letter-spacing: -1px;
+    }
+    .hero-stat span {
+      font-size: 9px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: rgba(255,255,255,.45);
+      font-weight: 600;
+    }
+
+    /* ═══════════════════════════════════════════
+       CONTENT AREA
+    ═══════════════════════════════════════════ */
+    .content { padding: 30px 48px 24px; flex: 1; display: flex; flex-direction: column; }
+
+    .section-title {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin: 0 0 14px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .section-title::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: linear-gradient(90deg, var(--line) 0%, transparent 100%);
+    }
+
+    /* ── Summary ── */
+    .summary {
+      margin-bottom: 26px;
+      padding: 18px 22px;
+      background: var(--accent-subtle);
+      border-left: 3px solid var(--accent);
+      border-radius: 0 8px 8px 0;
+      font-size: 12.5px;
+      line-height: 1.65;
+      color: var(--ink);
+    }
+    .summary strong { font-weight: 700; }
+
+    /* ── Two-column layout ── */
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 208px;
+      gap: 30px;
+      flex: 1;
+    }
+
+    /* ── Jobs ── */
+    .job { margin-bottom: 22px; break-inside: avoid; position: relative; }
+    .job:last-child { margin-bottom: 0; }
+
+    .job-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 10px;
+      margin-bottom: 2px;
+    }
+    .job-company {
+      font-size: 10px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: .8px;
+      color: var(--accent);
+    }
+    .job-date {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10px;
+      font-weight: 500;
+      color: var(--light);
+    }
+    .job-title {
+      font-size: 15px;
+      font-weight: 800;
+      color: var(--ink);
+      letter-spacing: -.3px;
+      line-height: 1.25;
+      margin-bottom: 7px;
+    }
+
+    .job ul { padding-left: 14px; }
+    .job li {
+      font-size: 11px;
+      line-height: 1.55;
+      margin-bottom: 4px;
+      color: var(--body);
+      padding-left: 2px;
+    }
+    .job li::marker { color: var(--accent); font-size: 8px; }
+    .job li:last-child { margin-bottom: 0; }
+    .job li strong { font-weight: 600; color: var(--ink); }
+
+    /* ── Sidebar ── */
+    .sidebar {
+      border-left: 1px solid var(--line);
+      padding-left: 22px;
+    }
+    .sidebar .section-title { margin-bottom: 12px; }
+    .sidebar section + section { margin-top: 20px; }
+
+    .expertise-group { margin-bottom: 14px; }
+    .expertise-group:last-child { margin-bottom: 0; }
+    .expertise-label {
+      font-size: 10.5px;
+      font-weight: 800;
+      color: var(--ink);
+      margin-bottom: 4px;
+      letter-spacing: .1px;
+    }
+    .expertise-items {
+      font-size: 10px;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    .pill-group { display: flex; flex-wrap: wrap; gap: 3px; margin-top: 3px; }
+    .pill {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 8.5px;
+      font-weight: 500;
+      padding: 2px 7px;
+      background: var(--line-light);
+      color: var(--body);
+      border-radius: 3px;
+      letter-spacing: .1px;
+    }
+    .pill.highlight { background: var(--accent-glow); color: var(--accent-deep); }
+
+    .mini-heading {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 8px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--light);
+      margin: 0 0 6px;
+    }
+
+    /* ── Footer ── */
+    .footer {
+      margin-top: auto;
+      padding-top: 14px;
+    }
+    .footer-inner {
+      border-top: 1px solid var(--line);
+      padding-top: 10px;
+      display: flex;
+      justify-content: space-between;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 8.5px;
+      font-weight: 500;
+      letter-spacing: .8px;
+      text-transform: uppercase;
+      color: var(--light);
+    }
+
+    /* ═══════════════════════════════════════════
+       PAGE 2
+    ═══════════════════════════════════════════ */
+    .p2-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 28px 48px;
+      border-bottom: 2px solid var(--ink);
+    }
+    .p2-name {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--ink);
+    }
+    .p2-link { color: var(--accent); font-size: 11px; font-weight: 700; }
+
+    .p2-content { padding: 28px 48px 24px; flex: 1; display: flex; flex-direction: column; }
+
+    .p2-headline {
+      font-size: 34px;
+      font-weight: 900;
+      color: var(--ink);
+      letter-spacing: -1.5px;
+      line-height: 1.1;
+      margin-bottom: 5px;
+    }
+    .p2-headline em { color: var(--accent); font-style: italic; }
+    .p2-deck {
+      color: var(--muted);
+      font-size: 12px;
+      margin-bottom: 24px;
+    }
+
+    /* ── Projects ── */
+    .projects { margin-bottom: 26px; }
+    .project {
+      display: grid;
+      grid-template-columns: 36px 1fr;
+      gap: 0;
+      padding: 14px 0;
+      border-bottom: 1px solid var(--line-light);
+      break-inside: avoid;
+    }
+    .project:first-of-type { padding-top: 0; }
+    .project:last-of-type { border-bottom: 0; }
+
+    .project-num {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 18px;
+      font-weight: 800;
+      color: var(--accent-glow);
+      line-height: 1;
+      padding-top: 2px;
+    }
+    .project-title {
+      font-size: 13.5px;
+      font-weight: 800;
+      color: var(--ink);
+      letter-spacing: -.2px;
+      margin-bottom: 3px;
+    }
+    .project-org {
+      font-size: 9.5px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: .8px;
+      color: var(--accent);
+      margin-bottom: 4px;
+    }
+    .project-desc {
+      font-size: 11px;
+      line-height: 1.55;
+      color: var(--body);
+      margin: 0;
+    }
+    .project-stack {
+      display: block;
+      margin-top: 5px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 9px;
+      font-weight: 500;
+      color: var(--accent);
+      letter-spacing: .2px;
+    }
+
+    /* ── Bottom grid ── */
+    .bottom-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 36px;
+    }
+
+    .edu-item { margin-bottom: 16px; break-inside: avoid; }
+    .edu-item:last-child { margin-bottom: 0; }
+    .edu-date {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10px;
+      font-weight: 500;
+      color: var(--light);
+    }
+    .edu-item h3 {
+      font-size: 13px;
+      font-weight: 800;
+      color: var(--ink);
+      margin: 2px 0;
+      letter-spacing: -.15px;
+    }
+    .edu-item p { font-size: 11px; margin: 0; color: var(--body); }
+    .edu-note {
+      color: var(--muted) !important;
+      font-size: 10.5px !important;
+      font-style: italic;
+      margin-top: 2px !important;
+    }
+
+    .right-col section + section { margin-top: 20px; }
+    .right-col h3 { font-size: 11.5px; font-weight: 700; color: var(--ink); margin-bottom: 2px; }
+    .right-col p { font-size: 10.5px; color: var(--muted); margin: 0; }
+    .right-col .note-text { font-size: 10px; color: var(--light); margin-top: 1px; }
+
+    /* ── Closing banner ── */
+    .closing-banner {
+      margin-top: 24px;
+      background: var(--dark);
+      color: white;
+      padding: 20px 26px;
+      border-radius: 8px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      position: relative;
+      overflow: hidden;
+    }
+    .closing-banner::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      width: 4px; height: 100%;
+      background: linear-gradient(180deg, var(--accent) 0%, var(--warm) 100%);
+    }
+    .closing-banner strong { display: block; font-size: 14px; font-weight: 800; letter-spacing: -.2px; }
+    .closing-banner span { color: rgba(255,255,255,.5); font-size: 11px; }
+    .closing-banner a {
+      color: white;
+      background: var(--accent);
+      padding: 10px 22px;
+      border-radius: 6px;
+      font-weight: 700;
+      font-size: 12px;
+      letter-spacing: .3px;
+      white-space: nowrap;
+      transition: all .2s;
+    }
+    .closing-banner a:hover { background: var(--accent-deep); transform: translateY(-1px); }
+
+    /* ═══════════════════════════════════════════
+       PRINT
+    ═══════════════════════════════════════════ */
+    @page { size: A4; margin: 0; }
+    @media print {
+      body { background: white; }
+      .toolbar { display: none; }
+      .page { width: 210mm; min-height: 297mm; margin: 0; box-shadow: none; break-after: page; }
+      .page:last-child { break-after: auto; }
+      a { text-decoration: none; }
+    }
+
+    /* ═══════════════════════════════════════════
+       RESPONSIVE
+    ═══════════════════════════════════════════ */
+    @media screen and (max-width: 820px) {
+      .toolbar { margin: 16px 20px; }
+      .page { width: calc(100% - 24px); }
+      .hero { padding: 32px 32px 28px; }
+      .content, .p2-content { padding-left: 32px; padding-right: 32px; }
+      .p2-header { padding-left: 32px; padding-right: 32px; }
+      .hero-name h1 { font-size: clamp(36px, 6vw, 52px); }
+    }
+    @media screen and (max-width: 600px) {
+      .page { width: 100%; min-height: auto; margin-bottom: 16px; }
+      .hero { padding: 28px 22px 24px; }
+      .hero-top { flex-direction: column; gap: 10px; }
+      .hero-contact { text-align: left; }
+      .hero-name h1 { font-size: 36px; letter-spacing: -2px; }
+      .hero-role { font-size: 13px; }
+      .hero-stats { flex-direction: column; gap: 0; }
+      .hero-stat { border-radius: 0 !important; }
+      .content, .p2-content { padding: 24px 22px; }
+      .p2-header { padding: 20px 22px; }
+      .two-col, .bottom-grid { grid-template-columns: 1fr; gap: 24px; }
+      .sidebar { border-left: 0; border-top: 1px solid var(--line); padding: 20px 0 0; }
+      .p2-headline { font-size: 28px; }
+      .closing-banner { flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="toolbar" aria-label="CV actions">
+  <div class="toolbar-left">
+    <span class="toolbar-dot"></span>
+    <span>Tanvir Hasan Anik — Curriculum Vitae</span>
+  </div>
+  <button type="button" onclick="window.print()">Export PDF</button>
+</div>
+
+<main>
+
+<!-- ════════════════════════════════════════════════════════════════
+     PAGE 1 — EXPERIENCE & EXPERTISE
+════════════════════════════════════════════════════════════════ -->
+<article class="page" aria-label="Page 1: Experience & Expertise">
+
+  <header class="hero">
+    <div class="hero-top">
+      <span class="hero-label">Senior Software Engineer</span>
+      <div class="hero-contact">
+        <a class="primary-link" href="https://tanviranik.com">tanviranik.com ↗</a><br>
+        <a href="mailto:tanviranikcs@gmail.com">tanviranikcs@gmail.com</a><br>
+        <a href="tel:+8801887454489">+880 1887 454489</a><br>
+        <a href="https://github.com/ProAnik">github.com/ProAnik</a> · <a href="https://www.linkedin.com/in/md-tanvir-hasan-anik-8711551ba">LinkedIn</a>
+      </div>
+    </div>
+
+    <div class="hero-name">
+      <h1><span class="first-line">Md.</span>Tanvir Hasan<br>Anik</h1>
+    </div>
+    <p class="hero-role">Full-Stack Engineer <span class="sep">•</span> Cloud &amp; DevOps Architect <span class="sep">•</span> Systems Administrator</p>
+
+    <div class="hero-stats">
+      <div class="hero-stat"><strong>5+</strong><span>Years in Production</span></div>
+      <div class="hero-stat"><strong>15+</strong><span>Systems Delivered</span></div>
+      <div class="hero-stat"><strong>3</strong><span>Cloud Platforms</span></div>
+      <div class="hero-stat"><strong>Gov+</strong><span>Enterprise Scale</span></div>
+    </div>
+  </header>
+
+  <div class="content">
+
+    <div class="summary">
+      <strong>Software engineer who builds and operates.</strong> 5+ years architecting full-stack applications, cloud infrastructure, and production systems across enterprise, government, and aerospace domains. Deep expertise across the entire stack — from IaC-provisioned AWS environments and MongoDB replica sets to FastAPI/Laravel/.NET backends and React/Next.js frontends. Proven track record of owning end-to-end delivery: infrastructure design, backend engineering, server hardening, monitoring, and team leadership.
+    </div>
+
+    <div class="two-col">
+
+      <!-- ── LEFT: Experience ── -->
+      <section>
+        <h2 class="section-title">Experience</h2>
+
+        <div class="job">
+          <div class="job-header">
+            <span class="job-company">BHE Uni</span>
+            <span class="job-date">2025 – Present</span>
+          </div>
+          <div class="job-title">Full Stack Developer — Lead Platform Engineer</div>
+          <ul>
+            <li><strong>Own full-stack architecture &amp; cloud operations</strong> for an enterprise university admissions and lead-lifecycle platform serving counselors and operations teams across multiple campuses.</li>
+            <li>Built <strong>Meta Graph API integrations</strong>, webhook listeners, lead scoring heuristics, and counselor auto-assignment — <strong>reducing manual processing overhead by ~70%</strong>.</li>
+            <li>Engineered <strong>Laravel service and repository layers</strong>, Redis distributed caching, asynchronous queue workers, and cron schedulers with sub-50ms database query response times.</li>
+            <li>Managed <strong>GitHub Actions CI/CD pipelines</strong>, Docker containerized releases, Nginx load balancing, SSL/TLS certificate rotation, and rollback-safe blue/green production deployments.</li>
+          </ul>
+        </div>
+
+        <div class="job">
+          <div class="job-header">
+            <span class="job-company">D2Soft Intelligence</span>
+            <span class="job-date">2022 – 2025</span>
+          </div>
+          <div class="job-title">Program Manager / Senior Software Engineer</div>
+          <ul>
+            <li><strong>AWS Cloud Architecture &amp; Enterprise Security</strong>: Designed and operated secure multi-VPC networks (subnets, NAT Gateways, Route 53, cross-VPC peering); deployed <strong>AWS WorkSpaces</strong> for secure engineering and centralized <strong>AWS Secrets Manager</strong> for dynamic credential rotation.</li>
+            <li><strong>Infrastructure as Code &amp; Artifact Automation</strong>: Built and maintained modular, DRY IaC pipelines with <strong>Terraform &amp; Terragrunt</strong>; integrated <strong>JFrog Artifactory</strong> for enterprise binary lifecycle and containerized workloads across Docker and Kubernetes.</li>
+            <li><strong>High-Availability MongoDB Replica Sets</strong>: Architected, provisioned, and scaled multi-node <strong>MongoDB replica sets across EC2 clusters</strong> in multiple availability zones with automated primary elections, health-checking, and zero-downtime backup policies.</li>
+            <li><strong>High-Throughput APIs &amp; Advanced Python Tooling</strong>: Developed distributed backend services with <strong>FastAPI, ASP.NET Core, and Laravel</strong>; built Python tooling for container registry synchronization, image layer caching, and multi-tier caching architectures.</li>
+            <li><strong>Aerospace &amp; Government Defense Systems</strong>: Authored performance-critical algorithms in <strong>C++</strong> for aerospace and public-sector projects; built and scaled <strong>bakome.com</strong> with real-time WebSockets and React/Next.js frontends.</li>
+            <li><strong>Linux Administration, Security &amp; Observability</strong>: Hardened Linux servers, configured <strong>StrongSwan IPsec VPNs</strong>, firewalls (iptables/UFW), Nginx/Apache, and <strong>Supervisor</strong> worker pools; instrumented systems with <strong>Datadog APM &amp; CloudWatch</strong> alarms.</li>
+          </ul>
+        </div>
+
+        <div class="job">
+          <div class="job-header">
+            <span class="job-company">Bangla Puzzle Limited</span>
+            <span class="job-date">2021 – 2022</span>
+          </div>
+          <div class="job-title">Software &amp; Systems Engineer</div>
+          <ul>
+            <li>Built the <strong>sadai.gov.bd</strong> national e-commerce API — product catalogs, dynamic pricing, cart workflows, multi-vendor order pipelines, and government agency inventory at national scale.</li>
+            <li>Developed the <strong>Ministry of Health &amp; Family Planning</strong> field monitors backend — real-time healthcare telemetry and survey data collection from thousands of field agents across Bangladesh.</li>
+            <li>Integrated secure payment gateways with <strong>bKash and SSLCommerz</strong>, featuring cryptographic webhook verification, ledger reconciliation, and automated receipts.</li>
+            <li>Administered production <strong>Linux servers</strong>, automated cron jobs, configured iptables firewalls, and managed reverse proxies via Nginx and Apache with zero-downtime deployments.</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- ── RIGHT: Sidebar (Ordered by 3 Pillars + Supporting) ── -->
+      <aside class="sidebar">
+
+        <section>
+          <h2 class="section-title">Technical Expertise</h2>
+
+          <!-- Pillar 1: Cloud & Platform -->
+          <div class="expertise-group">
+            <div class="expertise-label">☁️ 1. Cloud &amp; Platform</div>
+            <div class="pill-group">
+              <span class="pill highlight">AWS (EC2, VPC)</span>
+              <span class="pill highlight">Terraform</span>
+              <span class="pill highlight">Terragrunt</span>
+              <span class="pill highlight">AWS WorkSpaces</span>
+              <span class="pill highlight">Secrets Manager</span>
+              <span class="pill">Docker</span>
+              <span class="pill">Kubernetes</span>
+              <span class="pill">JFrog</span>
+              <span class="pill">Route 53</span>
+              <span class="pill">S3 / RDS</span>
+              <span class="pill">IAM / RBAC</span>
+              <span class="pill">Azure</span>
+              <span class="pill">GCP</span>
+            </div>
+          </div>
+
+          <!-- Pillar 2: Programming & Systems -->
+          <div class="expertise-group">
+            <div class="expertise-label">⌨️ 2. Programming &amp; Systems</div>
+            <div class="pill-group">
+              <span class="pill highlight">Python (FastAPI)</span>
+              <span class="pill highlight">C# (.NET Core)</span>
+              <span class="pill highlight">PHP (Laravel)</span>
+              <span class="pill highlight">C++ (Systems)</span>
+              <span class="pill">TypeScript</span>
+              <span class="pill">JavaScript</span>
+              <span class="pill">React / Next.js</span>
+              <span class="pill">Node.js</span>
+              <span class="pill">REST / gRPC</span>
+              <span class="pill">WebSockets</span>
+            </div>
+          </div>
+
+          <!-- Pillar 3: OS, Server Admin & Security -->
+          <div class="expertise-group">
+            <div class="expertise-label">🖥️ 3. Linux &amp; Server Admin</div>
+            <div class="pill-group">
+              <span class="pill highlight">Linux SysAdmin</span>
+              <span class="pill highlight">StrongSwan VPN</span>
+              <span class="pill highlight">Firewalls (iptables/UFW)</span>
+              <span class="pill highlight">Nginx</span>
+              <span class="pill highlight">Apache</span>
+              <span class="pill">Supervisor</span>
+              <span class="pill">User &amp; PAM Mgmt</span>
+              <span class="pill">SSL/TLS Certs</span>
+            </div>
+          </div>
+
+          <!-- Observability -->
+          <div class="expertise-group">
+            <div class="expertise-label">📊 Observability &amp; Reliability</div>
+            <div class="pill-group">
+              <span class="pill highlight">Datadog (APM/Logs)</span>
+              <span class="pill highlight">CloudWatch</span>
+              <span class="pill">Distributed Tracing</span>
+              <span class="pill">Synthetic Tests</span>
+              <span class="pill">Alerting / SLOs</span>
+            </div>
+          </div>
+
+          <!-- Databases -->
+          <div class="expertise-group">
+            <div class="expertise-label">🗄️ Databases &amp; Caching</div>
+            <div class="pill-group">
+              <span class="pill highlight">MongoDB (Replica Sets)</span>
+              <span class="pill highlight">PostgreSQL</span>
+              <span class="pill highlight">Redis</span>
+              <span class="pill">MySQL</span>
+              <span class="pill">MSSQL</span>
+              <span class="pill">Databricks</span>
+            </div>
+          </div>
+
+          <!-- DevOps & Workflows -->
+          <div class="expertise-group">
+            <div class="expertise-label">🔧 DevOps &amp; Delivery</div>
+            <div class="pill-group">
+              <span class="pill">GitHub Actions</span>
+              <span class="pill">GitLab CI</span>
+              <span class="pill">Docker Compose</span>
+              <span class="pill">Git</span>
+              <span class="pill">Jira</span>
+              <span class="pill">Agile / Scrum</span>
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <h2 class="section-title">Core Strengths</h2>
+          <div class="expertise-group">
+            <div class="expertise-label">Cloud Architecture</div>
+            <p class="expertise-items">AWS infrastructure design, IaC automation, monitoring, and cost-efficient scaling.</p>
+          </div>
+          <div class="expertise-group">
+            <div class="expertise-label">System Design</div>
+            <p class="expertise-items">Microservices, async processing, caching strategies, real-time systems.</p>
+          </div>
+          <div class="expertise-group">
+            <div class="expertise-label">Production Ownership</div>
+            <p class="expertise-items">End-to-end: deploy, monitor, harden, troubleshoot, and scale.</p>
+          </div>
+        </section>
+
+      </aside>
+    </div>
+
+    <footer class="footer"><div class="footer-inner"><a href="https://tanviranik.com">tanviranik.com</a><span>Page 01 / 02</span></div></footer>
+  </div>
+</article>
+
+<!-- ════════════════════════════════════════════════════════════════
+     PAGE 2 — PROJECTS & EDUCATION
+════════════════════════════════════════════════════════════════ -->
+<article class="page" aria-label="Page 2: Projects & Education">
+
+  <header class="p2-header">
+    <span class="p2-name">Tanvir Hasan Anik</span>
+    <a class="p2-link" href="https://tanviranik.com">tanviranik.com ↗</a>
+  </header>
+
+  <div class="p2-content">
+
+    <h2 class="p2-headline">Proven at <em>scale.</em></h2>
+    <p class="p2-deck">Selected projects across cloud infrastructure, government platforms, and enterprise engineering.</p>
+
+    <section class="projects">
+      <h2 class="section-title">Selected Projects</h2>
+
+      <div class="project">
+        <span class="project-num">01</span>
+        <div>
+          <div class="project-org">D2Soft Intelligence — AWS Cloud</div>
+          <div class="project-title">Production AWS Infrastructure &amp; MongoDB at Scale</div>
+          <p class="project-desc">Designed and operated multi-VPC AWS environments with EC2 fleets, Secrets Manager, and IAM policies. Scaled MongoDB replica sets with automated failover across availability zones. Instrumented full-stack observability using Datadog dashboards and CloudWatch alarms.</p>
+          <span class="project-stack">AWS · Terraform · Terragrunt · MongoDB · Datadog · CloudWatch · JFrog</span>
+        </div>
+      </div>
+
+      <div class="project">
+        <span class="project-num">02</span>
+        <div>
+          <div class="project-org">Bangla Puzzle — Government</div>
+          <div class="project-title">sadai.gov.bd — National E-Commerce Platform</div>
+          <p class="project-desc">Architected the backend API for Bangladesh's national e-commerce platform — product catalog management, order lifecycle, inventory tracking, and payment processing with bKash and SSLCommerz integrations at government scale.</p>
+          <span class="project-stack">Laravel · REST API · MySQL · bKash · SSLCommerz · Linux</span>
+        </div>
+      </div>
+
+      <div class="project">
+        <span class="project-num">03</span>
+        <div>
+          <div class="project-org">Bangla Puzzle — Government Health</div>
+          <div class="project-title">Ministry of Health &amp; Family Planning — Field Monitors</div>
+          <p class="project-desc">Developed the backend for the ministry's field monitoring application, enabling real-time data collection, reporting, and analytics from healthcare field workers across Bangladesh.</p>
+          <span class="project-stack">Laravel · REST API · PostgreSQL · Queue Workers · Reporting</span>
+        </div>
+      </div>
+
+      <div class="project">
+        <span class="project-num">04</span>
+        <div>
+          <div class="project-org">D2Soft Intelligence — Enterprise</div>
+          <div class="project-title">bakome.com &amp; Aerospace Engineering Systems</div>
+          <p class="project-desc">Delivered bakome.com with full-stack engineering. Built C++ components for government and aerospace projects. Developed advanced Python tooling for container registry management, image caching layers, and deployment automation.</p>
+          <span class="project-stack">FastAPI · ASP.NET Core · C++ · Python · Docker · JFrog · AWS</span>
+        </div>
+      </div>
+
+      <div class="project">
+        <span class="project-num">05</span>
+        <div>
+          <div class="project-org">BHE Uni — EdTech</div>
+          <div class="project-title">University Lead Management &amp; Enrollment Platform</div>
+          <p class="project-desc">End-to-end platform for automated lead ingestion via Meta Graph API, intelligent scoring, counselor assignment, and enrollment tracking. Owned architecture, deployment, monitoring, and team hiring.</p>
+          <span class="project-stack">Laravel · Meta Graph API · Redis · GitHub Actions · Docker · Nginx</span>
+        </div>
+      </div>
+    </section>
+
+    <div class="bottom-grid">
+      <section>
+        <h2 class="section-title">Education</h2>
+        <div class="edu-item">
+          <span class="edu-date">2024 – Present</span>
+          <h3>M.Sc. in Computer Science</h3>
+          <p>Jahangirnagar University</p>
+          <p class="edu-note">Research: AI Applications in Medical Science</p>
+        </div>
+        <div class="edu-item">
+          <span class="edu-date">2017 – 2020</span>
+          <h3>B.Sc. in Computer Science &amp; Engineering</h3>
+          <p>Daffodil International University</p>
+        </div>
+      </section>
+
+      <div class="right-col">
+        <section>
+          <h2 class="section-title">Training &amp; Certifications</h2>
+          <h3>Network &amp; System Administration</h3>
+          <p class="note-text">Genuity Training</p>
+          <h3 style="margin-top: 10px">Web Design &amp; Development</h3>
+          <p class="note-text">Genuity Training</p>
+        </section>
+        <section>
+          <h2 class="section-title">Working Style</h2>
+          <p><strong>Workflow:</strong> Agile / Scrum · Jira · Postman · GitHub · GitLab</p>
+          <p style="margin-top: 6px"><strong>Languages:</strong> Bengali (Native) · English (Professional)</p>
+        </section>
+      </div>
+    </div>
+
+    <div class="closing-banner">
+      <div>
+        <strong>Ready to build at scale.</strong>
+        <span>Dhaka, Bangladesh · Open to remote &amp; relocation</span>
+      </div>
+      <a href="https://tanviranik.com">Let's Connect ↗</a>
+    </div>
+
+    <footer class="footer"><div class="footer-inner"><a href="mailto:tanviranikcs@gmail.com">tanviranikcs@gmail.com</a><span>Page 02 / 02</span></div></footer>
+  </div>
+</article>
+
+</main>
+</body>
+</html>
