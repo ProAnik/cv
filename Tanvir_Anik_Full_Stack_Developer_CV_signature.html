@@ -37,7 +37,7 @@
     .focus-detail { margin-top: 3px; font-size: 8.4pt; line-height: 1.4; color: var(--muted); }
     .section-heading { display: flex; align-items: center; gap: 13px; margin-bottom: 15px; font-size: 8.7pt; font-weight: 700; color: var(--accent); letter-spacing: 0; text-transform: uppercase; }
     .section-heading::after { content: ""; flex: 1; height: 1px; background: var(--line); }
-    .job + .job { margin-top: 23px; }
+    .job + .job { margin-top: 15px; }
     .job-heading, .education-heading { display: flex; align-items: baseline; justify-content: space-between; gap: 15px; }
     .company { font-size: 13pt; font-weight: 700; line-height: 1.3; color: var(--ink); }
     .date { white-space: nowrap; font-size: 9pt; color: var(--muted); font-variant-numeric: tabular-nums; }
@@ -73,10 +73,10 @@
     .additional-section p { font-size: 9.5pt; }
     .additional-section p + p { margin-top: 7px; }
     .additional-section strong { color: var(--ink); font-weight: 600; }
-    .page-secondary .running-header { margin-bottom: 20px; }
+    .page-secondary .running-header { margin-bottom: 15px; }
     .page-secondary .section-heading { margin-bottom: 13px; }
-    .page-secondary .skills-section { margin-top: 23px; }
-    .page-secondary .skill-group { padding-top: 12px; padding-bottom: 12px; }
+    .page-secondary .skills-section { margin-top: 17px; }
+    .page-secondary .skill-group { padding-top: 8px; padding-bottom: 8px; }
     .page-secondary .skill-group:first-of-type { padding-top: 1px; }
     .page-secondary .education-section { margin-top: 22px; }
     .page-secondary .additional-section { margin-top: 20px; }
@@ -147,35 +147,35 @@
         </div>
       </header>
       <section class="profile" aria-label="Professional summary">
-        <p>Software engineer working across <strong>AWS infrastructure, backend development, and Linux operations</strong> since 2021. Experience spans government, aerospace, e-commerce, and education systems, with hands-on work in infrastructure as code, MongoDB scaling, API development, and Python automation. Connects application delivery with the infrastructure, monitoring, and administration needed to run it.</p>
+        <p>Software engineer working across <strong>AWS infrastructure, backend development, and Linux operations</strong> since 2021. Experience includes infrastructure as code, APIs, Python automation, <strong>MongoDB replica sets and scaling, Databricks, big data management, and data warehousing</strong>, plus <strong>Okta application, user, and group management at scale</strong>. Managed interactive real estate websites using <strong>Unreal Engine Pixel Streaming</strong> for real-time building and interior rendering, with a strong understanding of broker and property developer workflows.</p>
       </section>
       <div class="focus-grid" role="group" aria-label="Primary engineering strengths">
-        <div class="focus-item"><p class="focus-title">Cloud infrastructure</p><p class="focus-detail">AWS / Terraform / Terragrunt<br>MongoDB / Monitoring</p></div>
-        <div class="focus-item"><p class="focus-title">Backend programming</p><p class="focus-detail">Python / .NET / Laravel / C++<br>APIs / Automation</p></div>
+        <div class="focus-item"><p class="focus-title">Cloud infrastructure</p><p class="focus-detail">AWS / Terraform / Terragrunt<br>Datadog / Databricks</p></div>
+        <div class="focus-item"><p class="focus-title">Backend programming</p><p class="focus-detail">Python / .NET / Laravel / JavaScript<br>APIs / Automation</p></div>
         <div class="focus-item"><p class="focus-title">Linux &amp; server operations</p><p class="focus-detail">Administration / Networking<br>Web servers / VPNs</p></div>
       </div>
       <section aria-labelledby="experience-heading">
         <h2 class="section-heading" id="experience-heading">Professional experience</h2>
         <section class="job" aria-labelledby="bhe-heading">
           <div class="job-heading"><h3 class="company" id="bhe-heading">BHE Uni</h3><p class="date">2025 - Present</p></div>
-          <p class="role">Full Stack Developer <span class="scope">/ Education technology</span></p>
+          <p class="role">Fullstack/Infrastructure Engineer <span class="scope">/ Team supervision &amp; delivery</span></p>
           <ul class="achievements">
-            <li>Build and operate a <strong>university lead-management and enrollment platform</strong>, covering backend development, deployment, and production support.</li>
-            <li>Integrate the <strong>Meta Graph API</strong> for automated lead collection, scoring, counselor assignment, notifications, and enrollment tracking.</li>
-            <li>Develop Laravel services with queues, schedulers, Redis caching, and SQL optimization; maintain release workflows using <strong>GitHub Actions, Docker, Nginx, and SSL/TLS</strong>.</li>
+            <li><strong>Supervise development and delivery</strong>, monitor progress, coordinate Scrum updates, and support onboarding; supervised the launch of <strong>bangladesh247.com</strong>.</li>
+            <li>Lead development of <strong>bheuni.uk</strong> and <strong>ambassador.bheuni.uk</strong>; improve <strong>bheuni.io SEO</strong> to strengthen search visibility and competitiveness.</li>
+            <li>Build a <strong>university admissions CRM</strong> for leads, agents, people, courses, applications, and documents, with appointment scheduling, status and timeline tracking, and notes, using <strong>FastAPI, Laravel, Next.js, and React</strong>.</li>
+            <li>Integrate the <strong>Meta Graph API</strong> for lead collection, scoring, counselor assignment, notifications, and enrollment tracking.</li>
+            <li>Manage deployment and production support with <strong>GitHub Actions, Docker, Nginx, and SSL/TLS</strong>; optimize Laravel queues, schedulers, Redis caching, and SQL.</li>
           </ul>
         </section>
         <section class="job featured-job" aria-labelledby="d2-heading">
           <div class="job-heading"><h3 class="company" id="d2-heading">D2Soft Intelligence</h3><p class="date">2022 - 2025</p></div>
           <p class="role">Program Manager <span class="scope">/ Cloud infrastructure &amp; software engineering</span></p>
           <ul class="achievements">
-            <li>Built and operated <strong>AWS environments</strong> using EC2, VPC networking, WorkSpaces, and Secrets Manager for application infrastructure, virtual desktops, and secrets management.</li>
-            <li>Automated infrastructure provisioning and configuration with <strong>Terraform and Terragrunt</strong>; maintained <strong>JFrog</strong> artifact and container workflows.</li>
-            <li>Deployed, administered, and <strong>scaled MongoDB replica sets on EC2</strong>; monitored infrastructure and applications with <strong>Datadog and Amazon CloudWatch</strong>.</li>
-            <li>Developed backend services using <strong>Python/FastAPI, C#/.NET, and PHP/Laravel</strong>, connecting application features with databases and cloud services.</li>
-            <li>Built <strong>Python automation</strong> for container registry operations, container management, and caching workflows.</li>
-            <li>Contributed to <strong>bakome.com</strong> and government and aerospace projects involving <strong>C++, Python, and AWS</strong>.</li>
-            <li>Administered <strong>Linux servers, users, permissions, and firewalls</strong>; configured Apache, Nginx, Supervisor processes, and <strong>strongSwan VPN</strong> connections.</li>
+            <li>Operated <strong>AWS EC2, VPC, WorkSpaces, and Secrets Manager</strong>; automated infrastructure with <strong>Terraform and Terragrunt</strong> and maintained <strong>JFrog</strong> artifact and container workflows.</li>
+            <li>Deployed and <strong>scaled MongoDB replica sets on EC2</strong>; monitored applications and infrastructure with <strong>Datadog and Amazon CloudWatch</strong>.</li>
+            <li>Developed <strong>Python/FastAPI, C#/.NET, and PHP/Laravel</strong> services and Python automation for container registries, container management, and caching.</li>
+            <li>Contributed to <strong>bakome.com</strong> and government and aerospace projects using <strong>C++, Python, and AWS</strong>.</li>
+            <li>Administered <strong>Linux servers, users, permissions, and firewalls</strong>; configured Apache, Nginx, Supervisor, and <strong>strongSwan VPN</strong> connections.</li>
           </ul>
         </section>
       </section>
@@ -191,8 +191,10 @@
           <p class="role">Web Developer <span class="scope">/ Government &amp; commercial applications</span></p>
           <ul class="achievements">
             <li>Developed the <strong>e-commerce API backend</strong> for the government platform <strong><a href="https://sadai.gov.bd">sadai.gov.bd</a></strong>.</li>
-            <li>Built the <strong>backend for a field monitoring application</strong> supporting government health and family planning operations.</li>
-            <li>Delivered Laravel applications, integrated <strong>bKash and SSLCommerz</strong> payments, and managed Linux hosting, deployments, and production troubleshooting.</li>
+            <li>Built <strong>field monitoring APIs</strong> for government health and family planning operations.</li>
+            <li>Developed <strong>mojargames.com APIs</strong>, worked on <strong>Vue.js</strong> features, and integrated APIs with a <strong>Unity application</strong>.</li>
+            <li>Managed interactive real estate websites with <strong>Unreal Engine Pixel Streaming</strong> for building and interior visualization, supporting broker and property developer workflows.</li>
+            <li>Delivered Laravel apps with <strong>bKash/SSLCommerz</strong> payments; managed Linux hosting and deployments.</li>
           </ul>
         </section>
       </section>
@@ -212,7 +214,7 @@
           <dl class="skill-lines">
             <div><dt>Core: </dt><dd>Python, FastAPI, C#, ASP.NET Core, PHP, Laravel, C++.</dd></div>
             <div><dt>Backend: </dt><dd>REST APIs, authentication, queues, scheduled jobs, caching, container registry automation.</dd></div>
-            <div><dt>Data: </dt><dd>MongoDB replica sets, Redis, MySQL, PostgreSQL, Microsoft SQL Server.</dd></div>
+            <div><dt>Data platforms: </dt><dd>MongoDB replica sets, Databricks, big data management, data warehousing, Redis, MySQL, PostgreSQL, Microsoft SQL Server.</dd></div>
             <div><dt>Supporting stack: </dt><dd>JavaScript, Node.js, React, Next.js.</dd></div>
           </dl>
         </section>
