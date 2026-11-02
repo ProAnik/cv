@@ -407,7 +407,7 @@
 
       <section aria-labelledby="summary-title">
         <h2 id="summary-title">Summary</h2>
-        <p class="summary">Software engineer with <strong>5+ years</strong> delivering full-stack applications and operating production cloud infrastructure. Built complete CRMs with <strong>Laravel and React</strong> and backend services for national government platforms. Experience spans <strong>multi-account AWS</strong>, <strong>Okta</strong> group, role and permission management, <strong>Terraform/Terragrunt</strong>, self-hosted <strong>MongoDB</strong> replica sets and <strong>Databricks</strong>. Own delivery from architecture and implementation through CI/CD, production operations and engineering team leadership.</p>
+        <p class="summary">Software engineer with <strong>5+ years</strong> delivering full-stack applications and operating production cloud infrastructure. Built complete CRMs with <strong>Laravel, FastAPI, React and Next.js</strong> and backend services for national government platforms. Experience spans <strong>multi-account AWS</strong>, <strong>Okta</strong> group, role and permission management, <strong>Terraform/Terragrunt</strong>, <strong>Kubernetes</strong>, self-hosted <strong>MongoDB</strong> replica sets and <strong>Databricks</strong>. Own delivery from architecture and implementation through CI/CD, production operations and engineering team leadership.</p>
       </section>
 
       <section class="glance" aria-labelledby="highlights-title">
@@ -457,8 +457,8 @@
             <li>Defined multi-tier AWS environments entirely in Terraform and Terragrunt (VPC, EC2, IAM, networking) and used JFrog Artifactory to manage container images and build artifacts.</li>
             <li>Designed VPC topologies with public/private subnets, NAT gateways, Route 53 and cross-VPC peering; moved credentials into Secrets Manager and provisioned isolated AWS WorkSpaces for developers.</li>
             <li>Ran self-hosted MongoDB replica sets on EC2 across multiple Availability Zones with automatic primary failover, scheduled EBS snapshots and private-subnet isolation.</li>
-            <li>Set up Datadog APM and CloudWatch alarms to find and resolve incidents faster; hardened the Linux fleet with PAM, iptables/UFW, Nginx/Apache and strongSwan site-to-site IPsec tunnels.</li>
-            <li>Built Laravel backend services and Next.js frontend applications for <a href="https://bakome.com">bakome.com</a>, a US food-delivery marketplace; worked on cluster infrastructure and automated deployments with GitLab CI/CD.</li>
+            <li>Set up Datadog APM, Prometheus/Grafana dashboards and CloudWatch alarms to resolve incidents faster; hardened the Linux fleet with PAM, iptables/UFW, Nginx/Apache and strongSwan site-to-site IPsec tunnels.</li>
+            <li>Built Laravel backend services and Next.js frontend applications for <a href="https://bakome.com">bakome.com</a>, a US food-delivery marketplace; ran Kubernetes clusters with Helm-packaged releases deployed through GitLab CI/CD pipelines.</li>
             <li>Delivered C++ compute modules for government aerospace contracts; led engineering teams, architecture reviews, sprint planning, client milestones and technical hiring.</li>
           </ul>
         </div>
@@ -515,8 +515,8 @@
           <div class="project">
             <h3>bakome.com — Multi-App Delivery Platform</h3>
             <p class="kind">US marketplace · Maryland, Washington DC, Virginia</p>
-            <p>Laravel backend and Next.js frontend for a regional food-delivery marketplace, with cluster infrastructure and deployment automation through GitLab CI/CD.</p>
-            <p class="stack">Laravel · Next.js · GitLab CI/CD · AWS</p>
+            <p>Laravel backend and Next.js frontend for a regional food-delivery marketplace, running on Kubernetes with Helm releases shipped through GitLab CI/CD.</p>
+            <p class="stack">Laravel · Next.js · Kubernetes · Helm · GitLab CI/CD</p>
           </div>
           <div class="project">
             <h3>Multi-VPC AWS &amp; MongoDB Platform</h3>
@@ -531,15 +531,15 @@
         <h2 id="skills-title">Skills</h2>
         <dl class="skills">
           <dt>Cloud &amp; IaC</dt>
-          <dd>AWS (EC2, VPC, IAM, Route 53, RDS, S3, Secrets Manager, WorkSpaces, CloudWatch), Terraform, Terragrunt, Docker, Kubernetes, GitHub Actions, GitLab CI/CD, JFrog Artifactory, Azure</dd>
+          <dd>AWS (EC2, VPC, IAM, Route 53, RDS, S3, Secrets Manager, WorkSpaces, CloudWatch), Terraform, Terragrunt, Docker, Kubernetes, Helm, GitHub Actions, GitLab CI/CD, JFrog Artifactory, Azure</dd>
           <dt>Linux &amp; Networking</dt>
           <dd>Ubuntu, Debian, RHEL administration; PAM; iptables / UFW; strongSwan IPsec VPN; Nginx; Apache; Supervisor; SSL/TLS; VPC design</dd>
           <dt>Identity &amp; Access</dt>
           <dd>Multi-account AWS administration; Okta groups, roles and permissions; AWS IAM; role-based access control</dd>
           <dt>Languages &amp; APIs</dt>
-          <dd>Python (FastAPI), C# (ASP.NET Core), PHP (Laravel), C++, TypeScript / Node.js; REST, gRPC, WebSockets; React, Next.js, Vue.js</dd>
+          <dd>Python (FastAPI), C# (ASP.NET Core), PHP (Laravel), C++, TypeScript / Node.js, Bash; REST, gRPC, WebSockets; React, Next.js, Vue.js</dd>
           <dt>Data &amp; Observability</dt>
-          <dd>MongoDB (replica sets), PostgreSQL, MySQL, MSSQL, Redis; Datadog APM &amp; tracing, CloudWatch; Databricks</dd>
+          <dd>MongoDB (replica sets), PostgreSQL, MySQL, MSSQL, Redis; Datadog APM &amp; tracing, Prometheus, Grafana, CloudWatch; Databricks</dd>
         </dl>
       </section>
 
